@@ -12,8 +12,8 @@ const Home = () => {
   const [isTaskInfoExpanded, setIsTaskInfoExpanded] = useState(false);
 
   useEffect(() => {
-    // Load the JSON data from the public folder
-    fetch("/graph.json")
+    // Load the JSON data from the GitHub raw content URL
+    fetch("https://raw.githubusercontent.com/agbenchmark/agbenchmark-frontend/main/public/graph.json")
       .then((response) => response.json())
       .then((data) => {
         setData(data);
