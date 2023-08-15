@@ -30,9 +30,8 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
         </ToggleButton>
       ) : (
         <BenchmarkWrapper>
-          <RunButton>Run Benchmark</RunButton>
           <Detail>
-            <b>or click a node on the left</b>
+            <b>Click a node on the left</b>
           </Detail>
         </BenchmarkWrapper>
       )}
@@ -53,7 +52,6 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
           <Detail>
             <b>Category:</b> {selectedTask?.category}
           </Detail>
-          <RunButton>Run Task</RunButton>
         </>
       )}
     </TaskDetails>
@@ -99,12 +97,4 @@ const TaskPrompt = tw.p`
 `;
 const Detail = tw.p`
     mt-2
-`;
-
-const RunButton = tw.button`
-    border
-    mt-4
-    py-1
-    px-3
-    rounded
 `;
