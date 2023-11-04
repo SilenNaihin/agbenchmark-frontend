@@ -3,6 +3,7 @@ import React from "react";
 import tw from "tailwind-styled-components";
 
 import { TaskData } from "../lib/types";
+import Dropdown from "./Dropdown";
 
 interface TaskInfoProps {
   selectedTask: TaskData | null;
@@ -50,8 +51,27 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
             <b>Difficulty:</b> {selectedTask?.info?.difficulty}
           </Detail>
           <Detail>
-            <b>Category:</b> {selectedTask?.category}
+            <b>Category:</b> {selectedTask?.category.join(", ")}
           </Detail>
+          <h3 className="text-lg font-bold">More Information:</h3>
+      
+          <Dropdown title="Whitelist:">
+            <pre>
+              {JSON.stringify(selectedTask.whitelist, null, 2)}
+            </pre>
+          </Dropdown>
+
+          <Dropdown title="Pre-read Information:">
+            <pre>
+              {JSON.stringify(selectedTask.info?.pre_read, null, 2)}
+            </pre>
+          </Dropdown>
+
+          <Dropdown title="Ground Scoring:">
+            <pre>
+              {JSON.stringify(selectedTask.ground, null, 2)}
+            </pre>
+          </Dropdown>
         </>
       )}
     </TaskDetails>
