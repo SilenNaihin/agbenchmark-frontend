@@ -38,7 +38,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
       )}
 
       {selectedTask && (
-        <>
+        <div className="overflow-auto">
           <TaskName>{selectedTask?.name}</TaskName>
           <TaskPrompt>{selectedTask?.task}</TaskPrompt>
           <Detail>
@@ -63,7 +63,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
           <Dropdown title="Ground Scoring:">
             <code>{JSON.stringify(selectedTask.ground, null, 2)}</code>
           </Dropdown>
-        </>
+        </div>
       )}
     </TaskDetails>
   );
