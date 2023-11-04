@@ -79,7 +79,8 @@ const TaskDetails = tw.div<{ isExpanded: boolean }>`
   border
   border-gray-400
   h-full
-  overflow-hidden
+  overflow-y-hidden
+  overflow-x-auto
 `;
 
 export default TaskInfo;
