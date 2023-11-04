@@ -50,18 +50,18 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
           <Detail>
             <b>Category:</b> {selectedTask?.category.join(", ")}
           </Detail>
-          <h3 className="text-lg font-bold">More Information:</h3>
+          <h3 className="mt-6 text-lg font-bold">More Information:</h3>
 
           <Dropdown title="Whitelist:">
-            <pre>{JSON.stringify(selectedTask.whitelist, null, 2)}</pre>
+            <code>{JSON.stringify(selectedTask.whitelist, null, 2)}</code>
           </Dropdown>
 
           <Dropdown title="Pre-read Information:">
-            <pre>{JSON.stringify(selectedTask.info?.pre_read, null, 2)}</pre>
+            <code>{JSON.stringify(selectedTask.info?.pre_read, null, 2)}</code>
           </Dropdown>
 
           <Dropdown title="Ground Scoring:">
-            <pre>{JSON.stringify(selectedTask.ground, null, 2)}</pre>
+            <code>{JSON.stringify(selectedTask.ground, null, 2)}</code>
           </Dropdown>
         </>
       )}
