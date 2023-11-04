@@ -38,7 +38,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
       )}
 
       {selectedTask && (
-        <div className="overflow-auto">
+        <>
           <TaskName>{selectedTask?.name}</TaskName>
           <TaskPrompt>{selectedTask?.task}</TaskPrompt>
           <Detail>
@@ -53,7 +53,9 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
           <h3 className="mt-6 text-lg font-bold">More Information:</h3>
 
           <Dropdown title="Whitelist:">
-            <code>{JSON.stringify(selectedTask.whitelist, null, 2)}</code>
+            <code className="overflow-y-auto">
+              {JSON.stringify(selectedTask.whitelist, null, 2)}
+            </code>
           </Dropdown>
 
           <Dropdown title="Pre-read Information:">
@@ -63,7 +65,7 @@ const TaskInfo: React.FC<TaskInfoProps> = ({
           <Dropdown title="Ground Scoring:">
             <code>{JSON.stringify(selectedTask.ground, null, 2)}</code>
           </Dropdown>
-        </div>
+        </>
       )}
     </TaskDetails>
   );
@@ -79,8 +81,8 @@ const TaskDetails = tw.div<{ isExpanded: boolean }>`
   border
   border-gray-400
   h-full
-  overflow-y-hidden
-  overflow-x-auto
+  overflow-y-auto
+  overflow-x-hidden
 `;
 
 export default TaskInfo;
